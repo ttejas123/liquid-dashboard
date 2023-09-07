@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CouponTable = ({ columns, data }) => {
+const CouponTable = ({ columns, data, name }) => {
   return (
     <>
-    <div>Coupon Table</div>
+    <div>{name}</div>
     <table>
       <thead>
         <tr>

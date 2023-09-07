@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.striped-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.striped-table th, .striped-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.striped-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PersonaTable = ({ columns, data }) => {
+const PersonaTable = ({ columns, data, name }) => {
   return (
     <>
-    <div>Persona Table</div>
-    <table>
+    <div>{name}</div>
+    <table class="striped-table">
       <thead>
         <tr>
           {columns.map((column, index) => (
