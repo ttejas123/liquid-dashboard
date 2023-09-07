@@ -88,6 +88,61 @@ function App() {
     {
       "type": "table",
       "tableType": "persona_table",
+      "name": "Employee Table",
+      "tableProperties": {
+        "width": "500px",
+        // "height": "200px",
+        "border": "2px solid #555"
+      },
+      "columns": ["Name", "Department", "Salary"],
+      "data": [
+        { "Name": "John Doe", "Department": "HR", "Salary": 60000 },
+        { "Name": "Alice Smith", "Department": "IT", "Salary": 75000 }
+      ]
+    },
+    {
+      "type": "graph",
+      "tableType": "bar_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "500px",
+        "height": "280px",
+        "border": "1px solid #666"
+      } 
+    },
+    {
+      "type": "graph",
+      "tableType": "area_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "400px",
+        "height": "280px",
+        "border": "1px solid #666"
+      } 
+    },
+    {
+      "type": "graph",
+      "tableType": "doughnut_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "300px",
+        "height": "380px",
+        "border": "1px solid #666"
+      } 
+    },
+    {
+      "type": "graph",
+      "tableType": "radar_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "500px",
+        "height": "500px",
+        "border": "1px solid #666"
+      } 
+    },
+    {
+      "type": "table",
+      "tableType": "persona_table",
       "name": "Users Table",
       "tableProperties": {
         "width": "600px",
@@ -101,33 +156,6 @@ function App() {
         { "Name": "Linda", "Age": 32, "Location": "Miami" }
       ]
     },
-    {
-      "type": "table",
-      "tableType": "persona_table",
-      "name": "Employee Table",
-      "tableProperties": {
-        "width": "500px",
-        // "height": "200px",
-        "border": "2px solid #555"
-      },
-      "columns": ["Name", "Department", "Salary"],
-      "data": [
-        { "Name": "John Doe", "Department": "HR", "Salary": 60000 },
-        { "Name": "Alice Smith", "Department": "IT", "Salary": 75000 }
-      ]
-    }
-    ,
-    {
-      "type": "graph",
-      "tableType": "bar_chart",
-      "name": "Daywise Data",
-      "tableProperties": {
-        "width": "500px",
-        "height": "180px",
-        "border": "1px solid #666"
-      },
-      
-    }
     // Add more entries as needed
   ];
   
