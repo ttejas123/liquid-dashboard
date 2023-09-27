@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
-const PersonaTable = ({ columns, data, name }) => {
+const PersonaTable = ({ name, api }) => {
+  const [res, setRes] = useState({
+    columns: [],
+    data: []
+  })
+  
+  useEffect(()=> {
+    if(api) {
+      axios.get(api).then((res) => {
+        setRes(res.data.data);
+      }) 
+    }
+  }, [api])
+  
   return (
     <>
-    <div>{name}</div>
-    <table class="striped-table">
-      <thead>
-        <tr>
-          {columns.map((column, index) => (
-            <th key={index}>{column}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {columns.map((column, colIndex) => (
-              <td key={colIndex}>{row[column]}</td>
+      <div style={{textAlign: "left", paddingLeft: "10px"}}>{name}</div>
+      <table class="striped-table" >
+        <thead>
+          <tr>
+            {res.columns.map((column, index) => (
+              <th key={index}>{column}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {res.data.map((row, rowIndex) => (
+            <tr key={rowIndex} className='table-hover'>
+              {res.columns.map((column, colIndex) => (
+                <td style={{fontSize: "12px", fontWeight: "bold", cursor: "pointer"}} key={colIndex}>{row[column]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 };

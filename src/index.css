@@ -67,3 +67,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.table-hover :hover {
+  background-color: #f2f2f2;
+}
