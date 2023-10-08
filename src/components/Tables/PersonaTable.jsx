@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
-const PersonaTable = ({ name, api }) => {
+const PersonaTable = ({ name, api, setService }) => {
   const [res, setRes] = useState({
     columns: [],
     data: []
@@ -30,7 +30,13 @@ const PersonaTable = ({ name, api }) => {
           {res.data.map((row, rowIndex) => (
             <tr key={rowIndex} className='table-hover'>
               {res.columns.map((column, colIndex) => (
-                <td style={{fontSize: "12px", fontWeight: "bold", cursor: "pointer"}} key={colIndex}>{row[column]}</td>
+                <td onClick={()=> {
+                  if(row.config) {
+                    axios.get(row.config).then((res) => {
+                      setService((pre)=> ([...pre, res.data.config]))
+                    })
+                  } 
+                }} style={{fontSize: "12px", fontWeight: "bold", cursor: "pointer"}} key={colIndex}>{row[column]}</td>
               ))}
             </tr>
           ))}

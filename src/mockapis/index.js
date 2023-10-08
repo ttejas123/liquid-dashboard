@@ -29,16 +29,6 @@ mock.onGet("/config").reply(200, {
     },
     {
       "type": "graph",
-      "tableType": "bar_chart",
-      "name": "Daywise Data",
-      "tableProperties": {
-        "width": "500px",
-        "height": "280px",
-        "border": "1px solid #666"
-      } 
-    },
-    {
-      "type": "graph",
       "tableType": "area_chart",
       "name": "Daywise Data",
       "tableProperties": {
@@ -73,13 +63,33 @@ mock.onGet("/config_2").reply(200, {
   layout: "BaseSplitLayOut"
 });
 
+mock.onGet("/config_3").reply(200, {
+  config: [
+    {
+      "type": "table",
+      "tableType": "coupon_table",
+      "name": "Employee Table",
+      "tableProperties": {
+        "width": "250px",
+        "border": "2px solid #555"
+      },
+      "columns": ["Name", "Department", "Salary"],
+      "data": [
+        { "Name": "John Doe", "Department": "HR", "Salary": 60000 },
+        { "Name": "Alice Smith", "Department": "IT", "Salary": 75000 }
+      ]
+    }
+  ],
+  layout: "BaseSplitLayOut"
+});
+
 mock.onGet("/table/personaTable").reply(async()=> {
     const responseData = {
       data: {
         columns: ["Shopper", "status", "revenue", "potential_revenue"],
         data: [
-          { Shopper: "Hijacked Shopper", status: "✅", revenue: "$60000", potential_revenue: "$346273" },
-          { Shopper: "Hesitant Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273" },
+          { Shopper: "Hijacked Shopper", status: "✅", revenue: "$60000", potential_revenue: "$346273", config: "/config_2" },
+          { Shopper: "Hesitant Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273", config: "/config_3" },
           { Shopper: "Wishlist Shopper", status: "✅", revenue: "$75000", potential_revenue: "$346273" },
           { Shopper: "Coupon Runner", status: "❌", revenue: "$75000", potential_revenue: "$346273" },
           { Shopper: "Wrong Coupon", status: "❌", revenue: "$75000", potential_revenue: "$346273" },

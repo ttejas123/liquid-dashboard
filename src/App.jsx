@@ -23,11 +23,6 @@ function App() {
           return (
             <div style={{ marginTop: "5rem" }}>
              
-              <div onClick={()=> {
-                              axios.get("/config_2").then((res) => {
-                                setService((pre)=> ([...pre, res.data.config]))
-                              })
-                            }}>{index}</div>
                <BaseSplitLayOut>
                 {
                   val.map((item, i) => {
@@ -43,6 +38,7 @@ function App() {
                         tableProperties={item.tableProperties}
                         columns={item.columns}
                         data={item.data}
+                        setService={setService}
                       />
                       </div>
                     )})
