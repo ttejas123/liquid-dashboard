@@ -106,16 +106,21 @@ mock.onGet("/config_3").reply(200, {
 mock.onGet("/table/personaTable").reply(async()=> {
     const responseData = {
       data: {
-        columns: ["Shopper", "status", "revenue", "potential_revenue"],
+        columns: ["Shopper", "status", "revenue", "potential_revenue", "edit"],
         data: [
-          { Shopper: "Hijacked Shopper", status: "✅", revenue: "$60000", potential_revenue: "$346273", config: "/config_2" },
-          { Shopper: "Hesitant Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273", config: "/config_3" },
-          { Shopper: "Wishlist Shopper", status: "✅", revenue: "$75000", potential_revenue: "$346273" },
-          { Shopper: "Coupon Runner", status: "❌", revenue: "$75000", potential_revenue: "$346273" },
-          { Shopper: "Wrong Coupon", status: "❌", revenue: "$75000", potential_revenue: "$346273" },
-          { Shopper: "Extension Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273" },
-          
+          { Shopper: "Hijacked Shopper", status: "✅", revenue: "$60000", potential_revenue: "$346273",  edit: "✏️", config: "/config_2", model: "persona_model" },
+          { Shopper: "Hesitant Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273",  edit: "✏️", config: "/config_3", model: "persona_model" },
+          { Shopper: "Wishlist Shopper", status: "✅", revenue: "$75000", potential_revenue: "$346273",  edit: "✏️" },
+          { Shopper: "Coupon Runner", status: "❌", revenue: "$75000", potential_revenue: "$346273",     edit: "✏️" },
+          { Shopper: "Wrong Coupon", status: "❌", revenue: "$75000", potential_revenue: "$346273",      edit: "✏️" },
+          { Shopper: "Extension Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273", edit: "✏️" },
         ],
+        models: [
+          {
+            id: "persona_model",
+            component: "SmallModel"
+          }
+        ]
       },
     };
 

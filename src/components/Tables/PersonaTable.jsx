@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import SmallModel from '../Model/SmallModel';
 import { openModel } from '../Model/ModelController';
+import { ModelRegistory } from '../Model/ModelComponentRegistory';
 
 const PersonaTable = ({ name, api, setService }) => {
   const [res, setRes] = useState({
     columns: [],
-    data: []
+    data: [],
+    model: []
+  })
+  const [singleRowData, setSingleRowData] = useState({
+    col: [],
+    row: {} 
   })
   
   useEffect(()=> {
@@ -21,15 +27,20 @@ const PersonaTable = ({ name, api, setService }) => {
   
   return (
     <>
-      <div id={model_id} style={{ display: "none" }}><SmallModel id={model_id} /></div>
+      {
+        res.models?.map((val, index)=> {
+          const ModelComponent = ModelRegistory[val.component]; 
+          return (
+            <div key={index} id={val.id} style={{ display: "none" }}><ModelComponent {...val} data={singleRowData} /></div>
+          )
+        })
+      }
       <div style={{textAlign: "left", paddingLeft: "10px"}}>{name}</div>
       <table className="striped-table" >
         <thead>
           <tr>
             {res.columns.map((column, index) => (
-              <th key={index} style={{ cursor: "pointer" }} onClick={()=> {
-                openModel(model_id);
-              }}>{column}</th>
+              <th key={index} style={{ cursor: "pointer" }}>{column}</th>
             ))}
           </tr>
         </thead>
@@ -38,7 +49,10 @@ const PersonaTable = ({ name, api, setService }) => {
             <tr key={rowIndex} className='table-hover'>
               {res.columns.map((column, colIndex) => (
                 <td onClick={()=> {
-                  if(row.config) {
+                  if( column == "edit" && row.model) {
+                    openModel(row.model)
+                  }
+                  if(column == "Shopper" && row.config) {
                     axios.get(row.config).then((res) => {
                       setService((pre)=> {
                         if(pre.length > 1) {
