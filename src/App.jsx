@@ -3,8 +3,7 @@ import axios from "axios"
 import "./mockapis"
 import './App.css'
 import { ComponentRegistry } from './components/MainComponentRegistory'
-import BaseSplitLayOut from './components/Layout/BaseSplitLayOut'
-import { RegularListCompoent } from './components/DefaultBaseComponents/RegularListCompoent'
+import ServiceListCompoent from './components/DefaultBaseComponents/ServiceListCompoent'
 
 function App() {
   const [service, setService ] = useState([]);
@@ -20,15 +19,7 @@ function App() {
   return (
     <div>
     <h2> Fooo Yoo.... 🎉</h2>
-      {
-        service.map((val, index)=> {
-          return (
-            <div style={{ marginTop: "5rem" }} key={index}>
-                    <RegularListCompoent { ...{itemList: val, ComponentRegistry, setService }} />
-            </div>
-          )
-        })
-      }
+      <ServiceListCompoent ComponentRegistry={ComponentRegistry} setService={setService} service={service} />
     </div>
   )
 }
