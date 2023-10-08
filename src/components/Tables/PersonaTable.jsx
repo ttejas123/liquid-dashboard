@@ -33,7 +33,17 @@ const PersonaTable = ({ name, api, setService }) => {
                 <td onClick={()=> {
                   if(row.config) {
                     axios.get(row.config).then((res) => {
-                      setService((pre)=> ([...pre, res.data.config]))
+                      setService((pre)=> {
+                        if(pre.length > 1) {
+                          const temp = [...pre];
+                          temp[1] = res.data.config;
+                          pre = temp;
+                        } else {
+                          pre = [...pre, res.data.config]
+                        }
+                        return pre;
+
+                      })
                     })
                   } 
                 }} style={{fontSize: "12px", fontWeight: "bold", cursor: "pointer"}} key={colIndex}>{row[column]}</td>

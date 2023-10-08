@@ -70,7 +70,7 @@ mock.onGet("/config_3").reply(200, {
       "tableType": "coupon_table",
       "name": "Employee Table",
       "tableProperties": {
-        "width": "250px",
+        "width": "400px",
         "border": "2px solid #555"
       },
       "columns": ["Name", "Department", "Salary"],
