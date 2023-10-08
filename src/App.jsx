@@ -3,6 +3,7 @@ import axios from "axios"
 import "./mockapis"
 import './App.css'
 import { ComponentRegistry } from './components/MainComponentRegistory'
+import BaseSplitLayOut from './components/Layout/BaseSplitLayOut'
 function App() {
   const [service, setService ] = useState([]);
 
@@ -21,12 +22,13 @@ function App() {
         service.map((val, index)=> {
           return (
             <div style={{ marginTop: "5rem" }}>
-              <div style={{display: "flex", flexWrap: "wrap"}}>
+             
               <div onClick={()=> {
                               axios.get("/config_2").then((res) => {
                                 setService((pre)=> ([...pre, res.data.config]))
                               })
                             }}>{index}</div>
+               <BaseSplitLayOut>
                 {
                   val.map((item, i) => {
           
@@ -45,7 +47,7 @@ function App() {
                       </div>
                     )})
                 }
-              </div>
+              </BaseSplitLayOut>
             </div>
           )
         })
