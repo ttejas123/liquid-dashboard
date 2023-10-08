@@ -48,6 +48,7 @@ mock.onGet("/config").reply(200, {
       } 
     }
   ],
+  layout: "BaseSplitLayOut"
 });
 
 mock.onGet("/config_2").reply(200, {
@@ -69,6 +70,7 @@ mock.onGet("/config_2").reply(200, {
       ]
     }
   ],
+  layout: "BaseSplitLayOut"
 });
 
 mock.onGet("/table/personaTable").reply(async()=> {

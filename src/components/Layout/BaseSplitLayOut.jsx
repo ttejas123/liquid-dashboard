@@ -4,7 +4,7 @@ function BaseSplitLayOut({ children }) {
     const arrOf_children = children
     const len = arrOf_children.length
     return (
-    <div style={{width: "57rem"}}>
+    <div style={{width: "56.5rem"}}>
         <div style={{ width: "100%" }}>
             {
                 len > 0 && (<>{arrOf_children[0]}</>)
