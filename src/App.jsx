@@ -4,6 +4,8 @@ import "./mockapis"
 import './App.css'
 import { ComponentRegistry } from './components/MainComponentRegistory'
 import BaseSplitLayOut from './components/Layout/BaseSplitLayOut'
+import { RegularListCompoent } from './components/DefaultBaseComponents/RegularListCompoent'
+
 function App() {
   const [service, setService ] = useState([]);
 
@@ -16,39 +18,18 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div>
     <h2> Fooo Yoo.... 🎉</h2>
       {
         service.map((val, index)=> {
           return (
-            <div style={{ marginTop: "5rem" }}>
-             
-               <BaseSplitLayOut>
-                {
-                  val.map((item, i) => {
-          
-                    const Table = ComponentRegistry[item['type']][item['tableType']]
-                    return (
-                      <div style={item['tableProperties']}>
-                      <Table
-                        key={i}
-                        api={item.api}
-                        tableType={item.tableType}
-                        name={item.name}
-                        tableProperties={item.tableProperties}
-                        columns={item.columns}
-                        data={item.data}
-                        setService={setService}
-                      />
-                      </div>
-                    )})
-                }
-              </BaseSplitLayOut>
+            <div style={{ marginTop: "5rem" }} key={index}>
+                    <RegularListCompoent { ...{itemList: val, ComponentRegistry, setService }} />
             </div>
           )
         })
       }
-    </>
+    </div>
   )
 }
 

@@ -18,7 +18,7 @@ const PersonaTable = ({ name, api, setService }) => {
   return (
     <>
       <div style={{textAlign: "left", paddingLeft: "10px"}}>{name}</div>
-      <table class="striped-table" >
+      <table className="striped-table" >
         <thead>
           <tr>
             {res.columns.map((column, index) => (
