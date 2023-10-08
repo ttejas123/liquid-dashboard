@@ -51,6 +51,10 @@ const PersonaTable = ({ name, api, setService }) => {
                 <td onClick={()=> {
                   if( column == "edit" && row.model) {
                     openModel(row.model)
+                    setSingleRowData({
+                      col: res.columns,
+                      row: row
+                    });
                   }
                   if(column == "Shopper" && row.config) {
                     axios.get(row.config).then((res) => {

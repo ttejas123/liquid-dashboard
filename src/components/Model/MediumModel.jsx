@@ -1,7 +1,7 @@
 import React from 'react'
 import { closeModel } from './ModelController'
 
-function SmallModel({
+function MediumModel({
   id, 
   data,
   title,
@@ -23,7 +23,7 @@ function SmallModel({
         <div style={{
             height: "auto",
             minHeight: "20rem",
-            width: "40rem",
+            width: "50rem",
             background: "white",
             zIndex: 12,
             color: "black",
@@ -51,4 +51,4 @@ function SmallModel({
   )
 }
 
-export default SmallModel
+export default MediumModel

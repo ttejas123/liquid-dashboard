@@ -110,7 +110,7 @@ mock.onGet("/table/personaTable").reply(async()=> {
         data: [
           { Shopper: "Hijacked Shopper", status: "✅", revenue: "$60000", potential_revenue: "$346273",  edit: "✏️", config: "/config_2", model: "persona_model" },
           { Shopper: "Hesitant Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273",  edit: "✏️", config: "/config_3", model: "persona_model" },
-          { Shopper: "Wishlist Shopper", status: "✅", revenue: "$75000", potential_revenue: "$346273",  edit: "✏️" },
+          { Shopper: "Wishlist Shopper", status: "✅", revenue: "$75000", potential_revenue: "$346273",  edit: "✏️",  model: "medium_model"},
           { Shopper: "Coupon Runner", status: "❌", revenue: "$75000", potential_revenue: "$346273",     edit: "✏️" },
           { Shopper: "Wrong Coupon", status: "❌", revenue: "$75000", potential_revenue: "$346273",      edit: "✏️" },
           { Shopper: "Extension Shopper", status: "❌", revenue: "$75000", potential_revenue: "$346273", edit: "✏️" },
@@ -118,7 +118,15 @@ mock.onGet("/table/personaTable").reply(async()=> {
         models: [
           {
             id: "persona_model",
-            component: "SmallModel"
+            component: "SmallModel",
+            title: "Small Model",
+            footer: "--- * ---"
+          },
+          {
+            id: "medium_model",
+            component: "MediumModel",
+            title: "Medium Model",
+            footer: "--- * ---"
           }
         ]
       },
