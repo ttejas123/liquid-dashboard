@@ -3,7 +3,6 @@ import React from 'react'
 function BaseSplitLayOut({ children }) {
     const arrOf_children = children
     const len = arrOf_children.length
-    console.log(arrOf_children);
     return (
     <div style={{width: "56.5rem"}}>
         <div style={{ width: "100%" }}>

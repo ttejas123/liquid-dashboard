@@ -58,6 +58,26 @@ mock.onGet("/config_2").reply(200, {
         { "Name": "SSE", "unique_code": 25 },
         { "Name": "OOD", "unique_code": 35 }
       ]
+    },
+    {
+      "type": "graph",
+      "tableType": "bar_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "500px",
+        "height": "280px",
+        "border": "1px solid #666"
+      } 
+    },
+    {
+      "type": "graph",
+      "tableType": "area_chart",
+      "name": "Daywise Data",
+      "tableProperties": {
+        "width": "400px",
+        "height": "280px",
+        "border": "1px solid #666"
+      } 
     }
   ],
   layout: "BaseSplitLayOut"

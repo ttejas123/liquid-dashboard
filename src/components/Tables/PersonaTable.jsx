@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import SmallModel from '../Model/SmallModel';
+import { openModel } from '../Model/ModelController';
 
 const PersonaTable = ({ name, api, setService }) => {
   const [res, setRes] = useState({
@@ -14,15 +16,20 @@ const PersonaTable = ({ name, api, setService }) => {
       }) 
     }
   }, [api])
+
+  const model_id = "persona_model"
   
   return (
     <>
+      <div id={model_id} style={{ display: "none" }}><SmallModel id={model_id} /></div>
       <div style={{textAlign: "left", paddingLeft: "10px"}}>{name}</div>
       <table className="striped-table" >
         <thead>
           <tr>
             {res.columns.map((column, index) => (
-              <th key={index}>{column}</th>
+              <th key={index} style={{ cursor: "pointer" }} onClick={()=> {
+                openModel(model_id);
+              }}>{column}</th>
             ))}
           </tr>
         </thead>

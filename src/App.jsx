@@ -17,7 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div style={{position: "relative"}}>
     <h2> Fooo Yoo.... 🎉</h2>
       <ServiceListCompoent ComponentRegistry={ComponentRegistry} setService={setService} service={service} />
     </div>

@@ -8,7 +8,7 @@ function ServiceListCompoent(props) {
             props.service.map((val, index)=> {
                 return (
                     <div style={{ marginTop: "5rem" }} key={index}>
-                            <RegularListCompoent { ...{itemList: val }} {...props} />
+                            <RegularListCompoent key={index} { ...{itemList: val }} {...props} />
                     </div>
                 )
             })
