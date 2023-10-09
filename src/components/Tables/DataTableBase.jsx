@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import SmallModel from '../Model/SmallModel';
 import { openModel } from '../Model/ModelController';
 import { ModelRegistory } from '../Model/ModelComponentRegistory';
 
-const PersonaTable = ({ name, api, setService }) => {
+const DataTableBase = ({ name, api, setService }) => {
   const [res, setRes] = useState({
     columns: [],
     data: [],
@@ -28,7 +27,7 @@ const PersonaTable = ({ name, api, setService }) => {
     })
 
     setModel(model_ids_Object)
-  }, [])
+  }, [res])
   
   useEffect(()=> {
     if(api) {
@@ -37,8 +36,6 @@ const PersonaTable = ({ name, api, setService }) => {
       }) 
     }
   }, [api])
-
-  const model_id = "persona_model"
   
   return (
     <>
@@ -96,4 +93,4 @@ const PersonaTable = ({ name, api, setService }) => {
   );
 };
 
-export default PersonaTable;
+export default DataTableBase;

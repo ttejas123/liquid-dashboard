@@ -5,7 +5,8 @@ function MediumModel({
   id, 
   data,
   title,
-  footer
+  footer,
+  setModel
 }) {
   return (
     <div style={{
@@ -37,7 +38,7 @@ function MediumModel({
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 20px 0 20px" }}>
               <div style={{ padding: "10px" }}>{title}</div>
               <div onClick={()=> {
-                closeModel(id);
+                closeModel(id, setModel);
               }} style={{ padding: "3px 12px", border : "1px solid black", cursor: "pointer" }}>x</div>
            </div>
            <div> 
