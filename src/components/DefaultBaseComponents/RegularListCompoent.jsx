@@ -17,14 +17,18 @@ function RegularListCompoent({
                   <Table
 
                     key={i+item['id']}
-                    api={item.api}
-                    tableType={item.tableType}
-                    name={item.name}
-                    tableProperties={item.tableProperties}
-                    columns={item.columns}
-                    data={item.data}
-                    models={item.models}
+                    // api={item.api}
+                    // tableType={item.tableType}
+                    // name={item.name}
+                    // tableProperties={item.tableProperties}
+                    // columns={item.columns}
+                    // data={item.data}
+                    // models={item.models}
                     setService={setService} 
+
+                    {
+                      ...item
+                    }
                   />
                   </div>
                 )})
