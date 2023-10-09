@@ -69,14 +69,14 @@ const DataTableBase = ({ name, api, setService, col=[], rows=[], model_list=[] }
                     });
                   }
                   if(column == "Shopper" && row.config) {
-                    axios.get(row.config).then((res) => {
+                    axios.get(row.config).then((next_res) => {
                       setService((pre)=> {
                         if(pre.length > 1) {
                           const temp = [...pre];
-                          temp[1] = res.data.config;
-                          pre = temp;
+                          temp[1] = next_res.data.config;
+                          pre = [...temp];
                         } else {
-                          pre = [...pre, res.data.config]
+                          pre = [...pre, next_res.data.config]
                         }
                         return pre;
 

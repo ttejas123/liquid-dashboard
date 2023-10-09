@@ -6,6 +6,7 @@ const mock = new MockAdapter(axios, { delayResponse: 2000 })
 mock.onGet("/config").reply(200, {
   config: [
     {
+      "id": "12",
       "type": "table",
       "tableType": "persona_table",
       "name": "Persona List",
@@ -18,6 +19,7 @@ mock.onGet("/config").reply(200, {
       "api": "/table/personaTable"
     },
     {
+      "id": 24,
       "type": "graph",
       "tableType": "bar_chart",
       "name": "Daywise Data",
@@ -28,6 +30,7 @@ mock.onGet("/config").reply(200, {
       } 
     },
     {
+      "id": "26",
       "type": "graph",
       "tableType": "area_chart",
       "name": "Daywise Data",
@@ -44,6 +47,7 @@ mock.onGet("/config").reply(200, {
 mock.onGet("/config_2").reply(200, {
   config: [
         {
+      "id": "48",
       "type": "table",
       "tableType": "coupon_table",
       "name": "Coupon Table",
