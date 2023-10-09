@@ -52,11 +52,19 @@ mock.onGet("/config_2").reply(200, {
         // "height": "200px",
         "border": "1px solid #ccc"
       },
-      "columns": ["Name", "unique_code"],
+      "columns": ["Name", "unique_code", "edit"],
       "data": [
-        { "Name": "ABC", "unique_code": 30 },
-        { "Name": "SSE", "unique_code": 25 },
-        { "Name": "OOD", "unique_code": 35 }
+        { "Name": "ABC", "unique_code": 30, "edit": "✏️", "model": "coupon_medium_model" },
+        { "Name": "SSE", "unique_code": 25, "edit": "✏️", "model": "coupon_medium_model" },
+        { "Name": "OOD", "unique_code": 35, "edit": "✏️", "model": "coupon_medium_model" }
+      ],
+      "models": [
+        {
+          id: "coupon_medium_model",
+          component: "MediumModel",
+          title: "Medium Model",
+          footer: "--- * ---"
+        }
       ]
     },
     {

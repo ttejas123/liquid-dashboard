@@ -16,12 +16,13 @@ function RegularListCompoent({
                   <div key={i} style={item['tableProperties']}>
                   <Table
                     key={i}
-                    api={item.api}
-                    tableType={item.tableType}
-                    name={item.name}
-                    tableProperties={item.tableProperties}
-                    columns={item.columns}
-                    data={item.data}
+                    // api={item.api}
+                    // tableType={item.tableType}
+                    // name={item.name}
+                    // tableProperties={item.tableProperties}
+                    // columns={item.columns}
+                    // data={item.data}
+                    {...item}
                     setService={setService}
                   />
                   </div>

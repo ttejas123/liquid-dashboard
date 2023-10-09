@@ -3,11 +3,11 @@ import axios from "axios";
 import { openModel } from '../Model/ModelController';
 import { ModelRegistory } from '../Model/ModelComponentRegistory';
 
-const DataTableBase = ({ name, api, setService }) => {
+const DataTableBase = ({ name, api, setService, col=[], rows=[], model_list=[] }) => {
   const [res, setRes] = useState({
-    columns: [],
-    data: [],
-    model: []
+    columns: col,
+    data: rows,
+    models: model_list
   })
   const [singleRowData, setSingleRowData] = useState({
     col: [],

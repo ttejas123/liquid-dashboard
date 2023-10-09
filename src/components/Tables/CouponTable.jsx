@@ -1,27 +1,10 @@
 import React from 'react';
+import DataTableBase from './DataTableBase';
 
-const CouponTable = ({ columns, data, name }) => {
+const CouponTable = ({ columns, data, name, setService, models }) => {
   return (
     <>
-    <div>{name}</div>
-    <table>
-      <thead>
-        <tr>
-          {columns.map((column, index) => (
-            <th key={index}>{column}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {columns.map((column, colIndex) => (
-              <td key={colIndex}>{row[column]}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      <DataTableBase name={name} setService={setService} col={columns} rows={data} model_list={models} />
     </>
   );
 };
