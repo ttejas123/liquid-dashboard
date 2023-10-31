@@ -4,6 +4,7 @@ import "./mockapis"
 import './App.css'
 import { ComponentRegistry } from './components/MainComponentRegistory'
 import ServiceListCompoent from './components/DefaultBaseComponents/ServiceListCompoent'
+import FileUploader from './components/FileUploader'
 
 function App() {
   const [service, setService ] = useState([]);
@@ -20,6 +21,7 @@ function App() {
     <div style={{position: "relative"}}>
     <h2> Fooo Yoo.... 🎉</h2>
       <ServiceListCompoent ComponentRegistry={ComponentRegistry} setService={setService} service={service} />
+      <FileUploader />
     </div>
   )
 }
