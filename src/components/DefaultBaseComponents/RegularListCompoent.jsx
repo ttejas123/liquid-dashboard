@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import BaseSplitLayOut from '../Layout/BaseSplitLayOut';
 
 function RegularListCompoent({
@@ -17,13 +17,6 @@ function RegularListCompoent({
                   <Table
 
                     key={i+item['id']}
-                    // api={item.api}
-                    // tableType={item.tableType}
-                    // name={item.name}
-                    // tableProperties={item.tableProperties}
-                    // columns={item.columns}
-                    // data={item.data}
-                    // models={item.models}
                     setService={setService} 
 
                     {
@@ -37,7 +30,7 @@ function RegularListCompoent({
   )
 }
 
-export { RegularListCompoent }
+export { RegularListCompoent };
 
 
 {/*  */}

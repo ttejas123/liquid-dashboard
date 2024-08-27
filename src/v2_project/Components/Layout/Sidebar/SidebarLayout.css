@@ -1,0 +1,14 @@
+/* SidebarLayout.css */
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-content {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
